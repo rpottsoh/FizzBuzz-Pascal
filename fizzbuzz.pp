@@ -15,20 +15,21 @@ program fizzBuzz;
 var
     //i: Used for the for-do loop in the beginning
     i: integer;
+    isFizz: boolean;
+    isBuzz: boolean;
 
 begin
     for i := 1 to 100 do
-
     begin
         //Parse every iteration of i, check for multiples
-        if i mod 15 = 0 then
-            writeln('FizzBuzz')
-        else if i mod 5 = 0 then
-            writeln('Buzz')
-        else if i mod 3 = 0 then
-            writeln('Fizz')
-        else
-            //I guess this iteration wasn't cool, just a normal i. Print it out.
-            writeln(i);
+        isFizz := i mod 3;
+        isBuzz := i mod 5;
+        if isFizz then
+          write('Fizz');
+        if isBuzz then
+          write('Buzz');
+        if not isFizz and not isBuzz then
+          write(i);
+        writeln;
     end;
 end.
