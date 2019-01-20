@@ -19,17 +19,20 @@ var
     isBuzz: boolean;
 
 begin
-    for i := 1 to 100 do
+  for i := 1 to 100 do
+  begin
+    //Parse every iteration of i, check for multiples
+    isFizz := i mod 3;
+    isBuzz := i mod 5;
+    if not isFizz and not isBuzz then
+      write(i)
+    else
     begin
-        //Parse every iteration of i, check for multiples
-        isFizz := i mod 3;
-        isBuzz := i mod 5;
-        if isFizz then
-          write('Fizz');
-        if isBuzz then
-          write('Buzz');
-        if not isFizz and not isBuzz then
-          write(i);
-        writeln;
+      if isFizz then
+        write('Fizz');
+      if isBuzz then
+        write('Buzz');
     end;
+    writeln;
+  end;
 end.
